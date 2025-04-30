@@ -52,3 +52,8 @@ body {
   background-color: var(--grey-900);
   color: var(--white);
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
