@@ -25,3 +25,10 @@
   --radius-lg: var(--space-150);
   --radius-sm: var(--space-100);
 }
+
+@font-face {
+  font-family: var(--font-family);
+  src: url("./assets/fonts/Inter-VariableFont.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
