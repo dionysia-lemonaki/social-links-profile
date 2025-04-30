@@ -57,3 +57,27 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-300);
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, var(--space-300));
+}
+
+.card {
+  max-width: var(--max-width);
+  width: 100%;
+  background-color: var(--grey-800);
+  border-radius: var(--radius-lg);
+  padding: var(--space-300);
+
+  @media (min-width: 48rem) {
+    padding: var(--space-500);
+  }
+}
