@@ -81,3 +81,8 @@ img {
     padding: var(--space-500);
   }
 }
+
+.card__image {
+  margin-inline: auto;
+  border-radius: 50%;
+}
