@@ -51,6 +51,7 @@ body {
   line-height: var(--line-height);
   background-color: var(--grey-900);
   color: var(--white);
+  text-align: center;
 }
 
 img {
@@ -85,4 +86,15 @@ img {
 .card__image {
   margin-inline: auto;
   border-radius: 50%;
+}
+
+.card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card__location {
+  margin-block-start: var(--space-50);
+  color: var(--green);
+  font-weight: var(--font-weight-bold);
 }
