@@ -1,0 +1,42 @@
+:root {
+  /* --- colours --- */
+  --green: hsl(75 94% 57%);
+  --white: hsl(0 0% 100%);
+  --grey-700: hsl(0 0% 20%);
+  --grey-800: hsl(0 0% 12%);
+  --grey-900: hsl(0 0% 8%);
+
+  /* semantic colours */
+  --clr-text: var(--white);
+  --clr-accent: var(--green);
+  --bg-body: var(--grey-900);
+  --bg-card: var(--grey-800);
+  --bg-link: var(--grey-700);
+
+  /* typography */
+  --ff-sans: "Inter", sans-serif;
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-lg: 1.5rem; /* 24px */
+
+  --line-height-base: 1.5;
+
+  /* spacing */
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-500: 40px;
+
+  /* border radius & box shadow*/
+  --radius-sm: var(--space-100);
+  --radius-lg: var(--space-150);
+  --radius-full: 50%;
+
+  --shadow: 0 4px 4px 0 hsl(0 0 0 / 0.25);
+}
