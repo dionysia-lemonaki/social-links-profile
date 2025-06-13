@@ -76,4 +76,26 @@ body {
   font-size: var(--fs-sm);
   font-weight: var(--fw-regular);
   line-height: var(--line-height-base);
+  padding-inline: var(--space-300);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--space-300), 19.4286px + 1.4286vw, var(--space-500));
+  max-width: clamp(20.4375rem, 19.4196rem + 5.0893vw, 24rem);
+  width: 100%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
 }
