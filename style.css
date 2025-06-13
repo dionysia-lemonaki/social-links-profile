@@ -68,3 +68,12 @@ video {
   display: block;
   max-width: 100%;
 }
+
+body {
+  background-color: var(--bg-body);
+  color: var(--clr-text);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--line-height-base);
+}
