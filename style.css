@@ -99,3 +99,8 @@ main {
   flex-direction: column;
   gap: var(--space-300);
 }
+
+.card__image {
+  margin-inline: auto;
+  border-radius: var(--radius-full);
+}
