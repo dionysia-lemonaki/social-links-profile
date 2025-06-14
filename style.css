@@ -76,7 +76,6 @@ body {
   font-size: var(--fs-sm);
   font-weight: var(--fw-regular);
   line-height: var(--line-height-base);
-  padding-inline: var(--space-300);
 }
 
 main {
@@ -84,6 +83,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: var(--space-300);
 }
 
 .card {
@@ -114,4 +114,27 @@ main {
   margin-block-start: var(--space-50);
   color: var(--clr-accent);
   font-weight: var(--fw-bold);
+}
+
+.card__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+
+.card__link {
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  color: inherit;
+  background-color: var(--bg-link);
+  display: block;
+  padding: var(--space-150);
+  border-radius: var(--radius-sm);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--grey-700);
+    background-color: var(--clr-accent);
+  }
 }
