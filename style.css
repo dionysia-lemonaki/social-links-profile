@@ -1,0 +1,41 @@
+:root {
+  /* colours */
+  --green: hsl(75 94% 57%);
+  --white: hsl(0 0% 100%);
+  --grey-700: hsl(0 0% 20%);
+  --grey-800: hsl(0 0% 12%);
+  --grey-900: hsl(0 0% 8%);
+
+  /* semantic colours */
+  --clr-text-primary: var(--white);
+  --clr-text-secondary: var(--grey-700);
+  --clr-bg-body: var(--grey-900);
+  --clr-bg-card: var(--grey-800);
+  --clr-bg-link: var(--grey-700);
+  --clr-accent: var(--green);
+
+  /* typography */
+  --font-sans: "Inter", sans-serif;
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-2xl: 1.5rem; /* 24px */
+  --line-height: 1.5;
+
+  /* spacing */
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-500: 40px;
+
+  /* border radius */
+  --radius-sm: 8px;
+  --radius-lg: 12px;
+  --radius-full: 50%;
+
+  /* box shadow */
+  --shadow: 0 4px 4px 0 hsl(0 0% 0% / 0.25);
+}
