@@ -39,3 +39,10 @@
   /* box shadow */
   --shadow: 0 4px 4px 0 hsl(0 0% 0% / 0.25);
 }
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-VariableFont.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
