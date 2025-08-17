@@ -73,6 +73,15 @@ body {
   line-height: var(--line-height);
 }
 
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-300);
+}
+
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -81,4 +90,17 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.card {
+  max-width: 24rem;
+  width: 100%;
+  background-color: var(--clr-bg-card);
+  padding: clamp(var(--space-300), 1.2143rem + 1.4286vw, var(--space-500));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+  text-align: center;
 }
