@@ -127,3 +127,8 @@ main {
   color: var(--clr-accent);
   font-weight: var(--fw-bold);
 }
+
+.card__description::before,
+.card__description::after {
+  content: '"';
+}
