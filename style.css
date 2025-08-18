@@ -104,3 +104,10 @@ main {
   gap: var(--space-300);
   text-align: center;
 }
+
+.card__image {
+  margin-inline: auto;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: var(--radius-full);
+}
