@@ -1,22 +1,16 @@
 # Frontend Mentor - Social links profile solution
 
-This is a solution to the [Social links profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the [Social links profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ).
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+  - [Project notes](#project-notes)
 
 ## Overview
 
@@ -26,22 +20,20 @@ Users should be able to:
 
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
+Mobile:
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![](/assets/images/screenshots/mobile-screenshot.jpeg)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
+Desktop:
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](/assets/images/screenshots/desktop-screenshot.jpeg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/social-links-profile-a1jA9pp2dp)
+- [Live site URL](https://social-links-profile-dionysialemonaki.vercel.app/)
 
 ## My process
 
@@ -50,63 +42,86 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### Project notes
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+In the HTML, I considered the image to be meaningful content that deserves a proper description. Therefore, I provided alternative text that accurately conveys the image without being too verbose for screen readers. Treating it as decorative (and thus leaving the `alt` attribute empty) or using the person's name as the alt text wouldn't be appropriate - the latter would be redundant since the name already appears as the card's heading.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<img
+  src="/assets/images/avatar-jessica.jpeg"
+  alt="A headshot of a Black woman with an afro, wearing a black shirt, looking sideways at the camera with a neutral expression."
+  width="88"
+  height="88"
+  class="card__image"
+/>
+```
+
+For the text `Front-end developer and avid reader`, the design includes quotation marks, but it doesn't make sense semantically to use a `blockquote` or `q` element since the quotes appear to be decorative rather than representing an actual quotation. The text reads more like a self-description than something being cited. Therefore, I used a `p` element and added the quotes using the `::before ` and `::after` pseudo-elements.
+
+```html
+<p class="card__description">Front-end developer and avid reader.</p>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.card__description::before,
+.card__description::after {
+  content: '"';
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+In the CSS, the card's padding is smaller on mobile screens and increases on larger screens (tablet and desktop). Instead of using a media query to adjust just one property, I used the `clamp()` function to fluidly scale the spacing between a minimum and maximum value depending on the viewport width.
+
+```css
+.card {
+  padding: clamp(var(--space-300), 1.2143rem + 1.4286vw, var(--space-500));
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+For the image styles, since the CSS reset sets all images to `display: block;`, the `text-align` property on the `body` (used to center text in the card) had no effect on the image. To center it, I used the `margin-inline: auto` declaration. To make the default square image round, I applied a `border-radius: 50%`. And because it's a relatively small icon, I set it explicit `width` and `height` values in `rem` units so it scales with the user's browser text preferences.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+img {
+  display: block;
+  max-width: 100%;
+}
 
-### Continued development
+.card__image {
+  border-radius: 50%;
+  margin-inline: auto;
+  width: var(--max-avatar);
+  height: var(--max-avatar);
+}
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Lastly, for the link styles, I set each link to `display: block` so it occupies the full width of its parent `li`, and I added both horizontal and vertical padding to improve spacing and clickable area. I used Flexbox to separate each link, and I also used CSS nesting for the `:hover` and `:focus-visible` states.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```css
+.card__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+}
 
-### Useful resources
+.card__link {
+  display: block;
+  text-decoration: none;
+  background-color: var(--clr-bg-btn);
+  padding: var(--space-150);
+  border-radius: var(--radius-sm);
+  color: var(--clr-text-btn);
+  font-weight: var(--fw-bold);
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+  &:hover {
+    background-color: var(--clr-bg-btn-hover);
+    color: var(--clr-text-btn-hover);
+  }
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+  &:focus-visible {
+    outline: 2px dotted var(--clr-text-accent);
+    outline-offset: 2px;
+  }
+}
+```
