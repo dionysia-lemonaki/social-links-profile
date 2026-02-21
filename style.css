@@ -82,3 +82,14 @@ main {
   margin-inline: auto;
   border-radius: 50%;
 }
+
+.card__title {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+}
+
+.card__location {
+  margin-block-start: var(--space-50);
+  color: var(--green);
+  font-weight: var(--fw-bold);
+}
