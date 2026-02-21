@@ -93,3 +93,31 @@ main {
   color: var(--green);
   font-weight: var(--fw-bold);
 }
+
+.card__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+  list-style-type: none;
+}
+
+.card__link {
+  background-color: var(--grey-700);
+  display: block;
+  padding: var(--space-150);
+  border-radius: var(--space-100);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+
+  &:hover,
+  &:active {
+    background-color: var(--green);
+    color: var(--grey-700);
+  }
+
+  &:focus-visible {
+    outline: 2px dotted var(--green);
+    outline-offset: 4px;
+  }
+}
