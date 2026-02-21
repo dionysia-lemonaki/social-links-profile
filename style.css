@@ -75,3 +75,10 @@ main {
   border-radius: 12px;
   padding: clamp(var(--space-300), 1.2143rem + 1.4286vw, var(--space-500));
 }
+
+.card__image {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-inline: auto;
+  border-radius: 50%;
+}
