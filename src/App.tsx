@@ -3,7 +3,7 @@ import ProfileCard from "./components/ProfileCard";
 
 const App = () => {
   return (
-    <main>
+    <main className="font-inter bg-grey-900 min-h-dvh flex justify-center items-center p-6">
       <ProfileCard person={profileData} />
     </main>
   );
