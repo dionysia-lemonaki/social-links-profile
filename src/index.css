@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./assets/fonts/Inter-VariableFont.woff2") format("woff2");
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --color-grey-900: hsl(0 0% 8%);
+}
+
+body {
+  @apply bg-grey-900 text-white font-inter text-sm font-normal leading-normal;
+}
