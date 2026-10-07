@@ -3,7 +3,7 @@ import PersonProfile from "./components/PersonProfile";
 
 const App = () => {
   return (
-    <main>
+    <main className="min-h-screen flex justify-center items-center p-6">
       <PersonProfile person={person} />
     </main>
   );
