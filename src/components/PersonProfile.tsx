@@ -20,7 +20,7 @@ const PersonProfile = ({ person }: PersonProfileProps) => {
         <p className="text-green font-bold">{person.location}</p>
       </div>
       <p className={`before:content-['"'] after:content-['"']`}>{person.bio}</p>
-      <ul>
+      <ul className="flex flex-col gap-4">
         {person.links.map((link) => (
           <SocialLink key={link.url} link={link} />
         ))}
